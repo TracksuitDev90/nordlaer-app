@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Norsk Trainer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Norsk Trainer</h1>
+    <div class="pack-controls">
+      <label for="packSelect">Pack</label>
+      <select id="packSelect" aria-label="Choose pack"></select>
+
+      <label for="shuffleToggle" class="toggle">
+        <input type="checkbox" id="shuffleToggle" />
+        <span>Shuffle</span>
+      </label>
+
+      <button id="loadBtn">Load</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card" id="card">
+      <div class="meta">
+        <span id="position">0 / 0</span>
+        <span id="progressBar" class="progress"><span></span></span>
+      </div>
+
+      <div class="entry">
+        <p class="no" id="norwegian">Select a pack to begin</p>
+        <p class="en" id="english"></p>
+        <p class="pron" id="pronunciation"></p>
+        <div id="breakdown"></div>
+      </div>
+
+      <div class="actions">
+        <button id="prevBtn" title="Previous">◀</button>
+        <button id="revealBtn" title="Reveal/Hide">Reveal</button>
+        <button id="nextBtn" title="Next">▶</button>
+      </div>
+
+      <div class="actions secondary">
+        <button id="markKnownBtn">Mark known</button>
+        <button id="resetKnownBtn">Reset known</button>
+      </div>
+    </section>
+
+    <section class="list">
+      <h2>Pack contents</h2>
+      <input id="search" type="search" placeholder="Search in pack..." />
+      <ul id="entriesList"></ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>
+      Data loads from <code>packs/manifest.json</code> and referenced JSON files in this repo.
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
